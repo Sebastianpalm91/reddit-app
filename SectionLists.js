@@ -12,7 +12,7 @@ class MyComponent extends React.Component {
       // These three properties are optional
       getSeparatorHeight: () => 1 / PixelRatio.get(), // The height of your separators
       getSectionHeaderHeight: () => 20, // The height of your section headers
-      getSectionFooterHeight: () => 10, // The height of your section footers
+      getSectionFooterHeight: () => 1, // The height of your section footers
     })
   }
-}  
+}

@@ -5,26 +5,17 @@ import { AppRegistry,
          View,
          SectionList,
        } from 'react-native';
-
-
-import SectionLists from './SectionLists';
+// import NewSectionList from './NewSectionList';
+import ViewSection from './ViewSection';
 // import Hello from './Hello';
 // import List from './List';
 
 export default class App extends React.Component {
   render() {
     return (
-
       <View style={styles.container}>
-      <SectionList
-        sections={[
-          {title: 'D', data: ['Devin']},
-          {title: 'J', data: ['Jackson', 'James', 'Jillian', 'Jimmy', 'Joel', 'John', 'Julie']},
-        ]}
-        renderItem={({item}) => <Text style={styles.item}>{item}</Text>}
-        renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.title}</Text>}
-        getItemLayout={this.getItemLayout}
-      />
+      <ViewSection />
+      <ViewSection />
       </View>
     );
   }
@@ -36,5 +27,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#EEEEEE',
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 50,
   },
 });
