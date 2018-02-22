@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, FlatList, Text,} from 'react-native';
+import { FlatList, Text,} from 'react-native';
 
 export default class List extends React.Component{
   render (){

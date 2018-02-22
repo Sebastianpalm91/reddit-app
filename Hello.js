@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Button, Alert, Image} from 'react-native';
+import {View, Text, Button, Alert, Image, StyleSheet,} from 'react-native';
 
 export default class Hello extends React.Component{
   render (){
@@ -9,7 +9,7 @@ export default class Hello extends React.Component{
       style={{width: 100, height: 100}}
       source={require('./cat.jpg')}
       />
-      <Text>Hello from Hello</Text>
+      <Text style={styles.text}>Hello from Hello</Text>
       <Button
       onPress={() => {
         Alert.alert('You tapped the button!');
@@ -22,3 +22,10 @@ export default class Hello extends React.Component{
     )
   }
 }
+
+const styles = StyleSheet.create({
+  text: {
+    backgroundColor: '#ff00ed',
+    textDecorationLine: 'underline',
+},
+});
