@@ -38,11 +38,11 @@ export default class App extends React.Component {
         data={this.state.data}
         keyExtractor={(x, i) => i}
         renderItem={({item}) =>
-           <Image
-           style={{width: 100, height: 100}}
-           source={{uri:'`${item.images.480w_still}`'}}
-           />
-          // <Text>{item.url}</Text>
+           // <Image
+           // style={{width: 100, height: 100}}
+           // source={{uri:`${'item.images.original.url'}`}}
+           // />
+          <Text>{item.images.original.url}</Text>
         }
         />
       </View>
