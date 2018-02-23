@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, TextInput, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text,  View, TextInput, TouchableOpacity} from 'react-native';
 
 export default class LoginForm extends Component{
   render (){
@@ -27,21 +27,21 @@ export default class LoginForm extends Component{
 const styles = StyleSheet.create({
   container: {
     padding: 20
-  }
+  },
   input: {
     height: 40,
     backgroundColor: 'rgba(255,255,255,0.7)',
-    marginBottom: 10
+    marginBottom: 10,
     color: 'white',
-    paddingHorizontal: 10
-  }
+    paddingHorizontal: 10,
+  },
   buttonContainer: {
     backgroundColor: '#7f8c8d',
-    paddingVertical 15
-  }
+    paddingVertical: 15,
+  },
   buttonText: {
     textAlign: 'center',
     color: 'white',
-    fontWeight: '700'
+    fontWeight: '700',
   }
 })
