@@ -7,6 +7,7 @@ import { AppRegistry,
 import ApiContent from './src/components/Api/ApiContent';
 // import Login from './src/components/Login/Login';
 // import Splash from './src/loadingscreen/Splash';
+<<<<<<< HEAD
 import QueryInput from './src/components/Api/QueryInput';
 import Loading from './src/loadingscreen/Loading';
 
@@ -23,6 +24,16 @@ export default class App extends React.Component {
       <View style={styles.container}>
         {this.state.loaded ? <QueryInput/> : <Text>Loading...</Text>}
         <Text>{QueryInput.passwordInput}</Text>
+=======
+
+export default class App extends React.Component {
+
+
+
+  render() {
+    return (
+      <View style={styles.container}>
+>>>>>>> 2962ecff8658c850b3638860876420d5743f2cc6
         <ApiContent/>
       </View>
     );
@@ -32,7 +43,6 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 20,
     backgroundColor: '#EEEEEE',
     justifyContent: 'center',
   },
