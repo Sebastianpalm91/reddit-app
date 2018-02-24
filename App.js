@@ -8,11 +8,20 @@ import ApiContent from './src/components/Api/ApiContent';
 // import Login from './src/components/Login/Login';
 // import Splash from './src/loadingscreen/Splash';
 import QueryInput from './src/components/Api/QueryInput';
+import Loading from './src/loadingscreen/Loading';
+
 export default class App extends React.Component {
+  state = {
+    loaded: false;
+  }
+  constructor(){
+    super();
+    Loading.load(v => this.setState({loaded: true}));
+  }
   render() {
     return (
       <View style={styles.container}>
-        <QueryInput/>
+        {this.state.loaded ? <QueryInput/> : <Text>Loading...</Text>}
         <Text>{QueryInput.passwordInput}</Text>
         <ApiContent/>
       </View>
