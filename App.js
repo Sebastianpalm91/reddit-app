@@ -7,15 +7,21 @@ import { AppRegistry,
 import ApiContent from './src/components/Api/ApiContent';
 // import Login from './src/components/Login/Login';
 // import Splash from './src/loadingscreen/Splash';
-
+import Loading from './src/loadingscreen/Loading';
 export default class App extends React.Component {
-
+  state = {
+    loaded: false
+  }
+  constructor(){
+    super();
+    Loading.load(v => this.setState({loaded: true}));
+  }
 
 
   render() {
     return (
       <View style={styles.container}>
-        <ApiContent/>
+        {this.state.loaded ? <ApiContent/> : <Text>Loading...</Text>}
       </View>
     );
   }
