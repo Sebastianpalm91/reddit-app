@@ -13,7 +13,7 @@ export default class Splash extends Component {
           />
           <Text style={styles.title}>Reddit App!</Text>
         </View>
-        
+
         <View>
           <Text style={styles.subtitle}>Awesome app</Text>
         </View>
