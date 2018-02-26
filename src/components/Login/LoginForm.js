@@ -4,10 +4,10 @@ import { StyleSheet, Text,  View, TextInput, TouchableOpacity, StatusBar, } from
 export default class LoginForm extends Component{
   render (){
     return (
+      <View style={styles.container}>
       <StatusBar
       barstyle="light-content"
       />
-      <View style={styles.container}>
         <TextInput
         placeholder="Username or Email"
         placeholderTextColor="rgba(255,255,255,0.7)"

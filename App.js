@@ -5,14 +5,16 @@ import { AppRegistry,
          View,
        } from 'react-native';
 import ApiContent from './src/components/Api/ApiContent';
-// import Login from './src/components/Login/Login';
-// import Splash from './src/loadingscreen/Splash';
-import QueryInput from './src/components/Api/QueryInput';
+
+
+
 import Loading from './src/loadingscreen/Loading';
+import Login from './src/components/Login/Login';
+import Splash from './src/loadingscreen/Splash';
 
 export default class App extends React.Component {
   state = {
-    loaded: false;
+    loaded: false
   }
   constructor(){
     super();
@@ -21,9 +23,10 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        {this.state.loaded ? <QueryInput/> : <Text>Loading...</Text>}
-        <Text>{QueryInput.passwordInput}</Text>
-        <ApiContent/>
+        {this.state.loaded ? <Splash/> : <Text>Loading...</Text>}
+        <Text>{Splash.passwordInput}</Text>
+
+        <Login/>
       </View>
     );
   }
