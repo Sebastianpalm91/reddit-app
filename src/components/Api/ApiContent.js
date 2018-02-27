@@ -5,7 +5,10 @@ import {View,
         Image,
         Linking,
         StyleSheet,
+        TouchableOpacity,
         } from 'react-native';
+
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default class ApiContent extends React.Component{
   state = {
@@ -17,15 +20,17 @@ export default class ApiContent extends React.Component{
   }
 
   fetchData = async () => {
-    const response = await fetch("http://api.giphy.com/v1/gifs/search?q=funny+dog&api_key=4GTOUVolpNMX9zDlgN2lRsz65ILvFmVL");
+    const response = await fetch("https://www.reddit.com/r/videos/new.json?limit=25");
     const json = await response.json();
     this.setState({data: json.data});
   };
   render (){
+    let data = this.props.data;
     return (
       <FlatList
       data={this.state.data}
       keyExtractor={(x, i) => i}
+      ItemSeparatorComponent={() => <View style={{height: 0.5, backgroundColor: '#797979'}}/>}
       renderItem={({item}) =>
       <View style={styles.feedItem}>
          <Image
@@ -39,6 +44,9 @@ export default class ApiContent extends React.Component{
            <Text style={styles.detailsTitle}>TITLE GOES HERE</Text>
            <Text style={styles.detailsStats}>AUTHOR · nFormatter(STATS GOESE HERE,1) </Text>
          </View>
+         <TouchableOpacity>
+           <Icon name="more-vert" size={20} color={"#797979"}/>
+         </TouchableOpacity>
        </View>
       </View>
       }
@@ -70,7 +78,7 @@ function nFormatter(num, digits) {
 const styles = StyleSheet.create({
   feedItem: {
     flex: 1,
-    paddingTop: 10,
+    padding: 15,
   },
   descContainer: {
     flexDirection: 'row',
@@ -86,6 +94,7 @@ const styles = StyleSheet.create({
   },
   detailsStats: {
     fontSize: 14,
+    paddingTop: 3,
     color: '#636363',
   }
 })

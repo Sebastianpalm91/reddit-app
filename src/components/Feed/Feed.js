@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Image, TouchableOpacity, Text,} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import VideoItem from './videoItem';
+import ApiContent from '../Api/ApiContent';
+
 
 export default class Feed extends Component{
   render (){
@@ -19,7 +20,7 @@ export default class Feed extends Component{
           </View>
         </View>
         <View style={styles.body}>
-          <VideoItem/>
+          <ApiContent/>
         </View>
         <View style={styles.tabBar}>
           <TouchableOpacity style={styles.tabItem}>
