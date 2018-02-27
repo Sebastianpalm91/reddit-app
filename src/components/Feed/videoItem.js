@@ -5,7 +5,7 @@ import ApiContent from '../Api/ApiContent';
 
 export default class VideItem extends Component{
   render (){
-    let video = this.props.video;
+    let images = this.props.images;
 
     return (
       <View style={styles.container}>
@@ -18,5 +18,5 @@ export default class VideItem extends Component{
 const styles = StyleSheet.create({
   container: {
     flex: 1
-  }
+  },
 })
