@@ -20,7 +20,7 @@ export default class ApiContent extends React.Component{
   }
 
   fetchData = async () => {
-    const response = await fetch("https://www.reddit.com/r/videos/new.json?limit=25");
+    const response = await fetch("https://www.reddit.com/api/v1/authorize?client_id=ElDMK5FwhyyryA&response_type=code&state=snip&redirect_uri=https://github.com/Sebastianpalm91/reddit-app&duration=temporary&scope=identity+read");
     const json = await response.json();
     this.setState({data: json.data});
   };
@@ -35,8 +35,8 @@ export default class ApiContent extends React.Component{
       <View style={styles.feedItem}>
          <Image
          style={{height: 100}}
-         source={{uri:`${item.images.original.url}`}}
-         onPress={ ()=> Linking.openURL(`${item.images.original.url}`)}
+         source={{uri:`${item.data.data.children.data.thumbnail}`}}
+         onPress={ ()=> Linking.openURL(`${item.children.data.thumbnail}`)}
          />
        <View style={styles.descContainer}>
          <Image source={{uri: 'https://randomuser.me/api/portraits/women/88.jpg' }} style={{height: 50, width: 50, borderRadius: 25}}/>
