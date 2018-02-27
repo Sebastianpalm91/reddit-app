@@ -1,0 +1,2 @@
+https://www.reddit.com/api/v1/authorize?client_id=HX3cUg6KrxLTRg&response_type=code&
+    state=Random3523513598&redirect_uri=https://github.com/Sebastianpalm91/reddit-app&duration=temporary&scope=identity

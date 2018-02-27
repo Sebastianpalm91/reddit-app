@@ -3,13 +3,17 @@ import {View, TextInput, StyleSheet, } from 'react-native';
 import {Button, } from 'react-native-elements';
 
 export default class QueryInput extends React.Component{
+  state = { term: ''};
   render (){
     return (
-      <View>
-      <TextInput />
-      <Button style = {styles.searchBar}
+      <View style= {styles.containerStyle}>
+      <TextInput style = {styles.searchTextStyle}
+        onChangeText={term => this.setState({term})}
+        value={this.state.term}
+       />
+      <Button style = {styles.buttonStyle}
         title="Search"
-        onPress={() => console.log('The button was pressed')}
+        onPress={() => this.props.onPressSearch(this.state.term)}
         />
       </View>
     );
@@ -17,11 +21,6 @@ export default class QueryInput extends React.Component{
 }
 
 const styles = StyleSheet.create({
-  searchBar: {
-    flex: 1,
-    backgroundColor: '#EEEEEE',
-    justifyContent: 'center',
-  },
   containerStyle: {
     flexDirection: 'row',
     marginTop: 75,
@@ -29,9 +28,11 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   searchTextStyle: {
-    flex: 1
+    flex: 1,
+    borderBottomWidth: 2,
   },
   buttonStyle: {
-    
+    height: 30,
+    marginBottom: 8,
   }
 });

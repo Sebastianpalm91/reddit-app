@@ -17,7 +17,6 @@ import Splash from './src/loadingscreen/Splash';
 // {this.state.loaded ?  <Feed/> : <Splash/>}
 
 export default class App extends React.Component {
-
   state = {
     loaded: false
   }
@@ -25,10 +24,15 @@ export default class App extends React.Component {
     super()
     Loading.load(v => this.setState({loaded: true}));
   }
+  onPressSearch = term => {
+
+  }
   render() {
     return (
       <View style={styles.container}>
-      <QueryInput/>
+      <QueryInput
+      onPressSearch={this.onPressSearch}
+      />
       </View>
     );
   }
