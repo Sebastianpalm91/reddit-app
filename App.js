@@ -12,7 +12,7 @@ import Loading from './src/loadingscreen/Loading';
 
 export default class App extends React.Component {
   state = {
-    loaded: false;
+    loaded: false
   }
   constructor(){
     super();
@@ -21,9 +21,11 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        {this.state.loaded ? <QueryInput/> : <Text>Loading...</Text>}
-        <Text>{QueryInput.passwordInput}</Text>
-        <ApiContent/>
+      <QueryInput/>
+      <Text>{QueryInput.passwordInput}</Text>
+       <ApiContent/>
+        {this.state.loaded ?  <ApiContent/>  : <Text>Loading...</Text>}
+
       </View>
     );
   }
