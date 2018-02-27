@@ -27,14 +27,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-
-      <QueryInput/>
-      <Text>{QueryInput.passwordInput}</Text>
-       <ApiContent/>
-        {this.state.loaded ?  <ApiContent/>  : <Text>Loading...</Text>}
-
-        <Feed/>
-
+        {this.state.loaded ?  <Feed/> : <Splash/>}
       </View>
     );
   }
