@@ -9,11 +9,12 @@ import { AppRegistry,
 } from 'react-native';
 
 import ApiContent from './src/components/Api/ApiContent';
+import QueryInput from './src/components/Api/QueryInput';
 import Feed from './src/components/Feed/Feed';
 import Loading from './src/loadingscreen/Loading';
 import Login from './src/components/Login/Login';
 import Splash from './src/loadingscreen/Splash';
-// {this.state.loaded ? <Login/> : <Splash/> }
+// {this.state.loaded ?  <Feed/> : <Splash/>}
 
 export default class App extends React.Component {
 
@@ -27,7 +28,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        {this.state.loaded ?  <Feed/> : <Splash/>}
+      <QueryInput/>
       </View>
     );
   }

@@ -1,46 +1,37 @@
 import React from 'react';
-import {View, TextInput, StyleSheet, Text, TouchableOpacity, } from 'react-native';
+import {View, TextInput, StyleSheet, } from 'react-native';
+import {Button, } from 'react-native-elements';
 
-export default class QeuryInput extends React.Component{
+export default class QueryInput extends React.Component{
   render (){
     return (
       <View>
-      <TextInput
-      placeholder="Search for your favorite GIF!"
-      placeholderTextColor="rgba(255,255,255,0.7)"
-      returnKeyType="go"
-      secureTextEntry
-      style={styles.input}
-      ref={(input) => this.passwordInput = input}
-      />
-
-      <TouchableOpacity style={styles.buttonContainer}>
-      <Text style={styles.buttonText}>Search</Text>
-      </TouchableOpacity>
+      <TextInput />
+      <Button style = {styles.searchBar}
+        title="Search"
+        onPress={() => console.log('The button was pressed')}
+        />
       </View>
-
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    padding: 20
+  searchBar: {
+    flex: 1,
+    backgroundColor: '#EEEEEE',
+    justifyContent: 'center',
   },
-  input: {
-    height: 40,
-    backgroundColor: 'rgba(255,255,255,0.7)',
-    marginBottom: 10,
-    color: 'white',
-    paddingHorizontal: 10,
+  containerStyle: {
+    flexDirection: 'row',
+    marginTop: 75,
+    marginLeft: 10,
+    marginRight: 10,
   },
-  buttonContainer: {
-    backgroundColor: '#7f8c8d',
-    paddingVertical: 15,
+  searchTextStyle: {
+    flex: 1
   },
-  buttonText: {
-    textAlign: 'center',
-    color: 'white',
-    fontWeight: '700',
+  buttonStyle: {
+    
   }
-})
+});
