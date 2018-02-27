@@ -15,9 +15,6 @@ import Loading from './src/loadingscreen/Loading';
 import Login from './src/components/Login/Login';
 import Splash from './src/loadingscreen/Splash';
 // {this.state.loaded ?  <Feed/> : <Splash/>}
-// <QueryInput
-// onPressSearch={this.onPressSearch}
-// />
 
 export default class App extends React.Component {
   state = {
@@ -33,7 +30,9 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Feed/>
+      <QueryInput
+      onPressSearch={this.onPressSearch}
+      />
       </View>
     );
   }

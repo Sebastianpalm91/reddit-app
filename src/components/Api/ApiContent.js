@@ -9,7 +9,17 @@ import {View,
         } from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
-
+// giphy api
+// http://api.giphy.com/v1/gifs/search?q=funny+dog&api_key=4GTOUVolpNMX9zDlgN2lRsz65ILvFmVL
+// source={{uri:`${item.images.original.url}`}}
+// onPress={ ()=> Linking.openURL(`${item.images.original.url}`)}
+// reddit api
+//  source={{uri:`${item.data.children.data.preview.images.source.url}`}}
+// onPress={ ()=> Linking.openURL(`${item.images.original.url}`)}
+// Acces token
+//https://www.reddit.com/api/v1/authorize?client_id=ElDMK5FwhyyryA&response_type=code&state=snip&redirect_uri=https://github.com/Sebastianpalm91/reddit-app&duration=temporary&scope=identity+read
+// test json
+// https://www.reddit.com/r/funny/.json?limit=1
 export default class ApiContent extends React.Component{
   state = {
     data: []
@@ -20,7 +30,7 @@ export default class ApiContent extends React.Component{
   }
 
   fetchData = async () => {
-    const response = await fetch("https://www.reddit.com/api/v1/authorize?client_id=ElDMK5FwhyyryA&response_type=code&state=snip&redirect_uri=https://github.com/Sebastianpalm91/reddit-app&duration=temporary&scope=identity+read");
+    const response = await fetch("http://api.giphy.com/v1/gifs/search?q=funny+dog&api_key=4GTOUVolpNMX9zDlgN2lRsz65ILvFmVL");
     const json = await response.json();
     this.setState({data: json.data});
   };
@@ -35,12 +45,14 @@ export default class ApiContent extends React.Component{
       <View style={styles.feedItem}>
          <Image
          style={{height: 100}}
-         source={{uri:`${item.data.data.children.data.thumbnail}`}}
-         onPress={ ()=> Linking.openURL(`${item.children.data.thumbnail}`)}
+         source={{uri:`${item.images.original.url}`}}
+         onPress={ ()=> Linking.openURL(`${item.images.original.url}`)}
+
          />
        <View style={styles.descContainer}>
          <Image source={{uri: 'https://randomuser.me/api/portraits/women/88.jpg' }} style={{height: 50, width: 50, borderRadius: 25}}/>
          <View style={styles.details}>
+
            <Text style={styles.detailsTitle}>TITLE GOES HERE</Text>
            <Text style={styles.detailsStats}>AUTHOR · nFormatter(STATS GOESE HERE,1) </Text>
          </View>
