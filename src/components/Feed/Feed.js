@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Image, TouchableOpacity, Text,} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import VideoItem from './VideoItem'
+import VideoItem from './videoItem';
 export default class Feed extends Component{
   render (){
     return (
