@@ -27,15 +27,14 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-<<<<<<< HEAD
+
       <QueryInput/>
       <Text>{QueryInput.passwordInput}</Text>
        <ApiContent/>
         {this.state.loaded ?  <ApiContent/>  : <Text>Loading...</Text>}
 
-=======
         <Feed/>
->>>>>>> f0d9dff379fb7d080693a6d72c6eecc3bf0f0d61
+
       </View>
     );
   }
