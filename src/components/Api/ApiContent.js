@@ -30,7 +30,7 @@ export default class ApiContent extends React.Component{
   }
 
   fetchData = async () => {
-    const response = await fetch("https://www.reddit.com/r/funny/.json?limit=1");
+    const response = await fetch("http://api.giphy.com/v1/gifs/search?q=funny+dog&api_key=4GTOUVolpNMX9zDlgN2lRsz65ILvFmVL");
     const json = await response.json();
     this.setState({data: json.data});
   };
@@ -44,12 +44,10 @@ export default class ApiContent extends React.Component{
       renderItem={({item}) =>
       <View style={styles.feedItem}>
          <Image
-         style={{height: 100, width: 50}}
-         source={{uri:`${item.data.children.data.subreddit_id}`}}
-         onPress={ ()=> Linking.openURL(`${data.data.children.data.subreddit_id}`)}
-
+         style={{height: 100}}
+         source={{uri:`${item.images.original.url}`}}
+         onPress={ ()=> Linking.openURL(`${item.images.original.url}`)}
          />
-       <Text>{}</Text>
        <View style={styles.descContainer}>
          <Image source={{uri: 'https://randomuser.me/api/portraits/women/88.jpg' }} style={{height: 50, width: 50, borderRadius: 25}}/>
          <View style={styles.details}>
