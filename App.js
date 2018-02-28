@@ -8,8 +8,9 @@ import { AppRegistry,
   ActivityIndicator,
   Button,
   Linking,
+  Dimensions
 } from 'react-native';
-
+import HTML from 'react-native-render-html';
 import ApiContent from './src/components/Api/ApiContent';
 import QueryInput from './src/components/Api/QueryInput';
 import Feed from './src/components/Feed/Feed';
@@ -17,6 +18,7 @@ import Loading from './src/loadingscreen/Loading';
 import Login from './src/components/Login/Login';
 import Splash from './src/loadingscreen/Splash';
 // {this.state.loaded ?  <Feed/> : <Splash/>}
+
 
 export default class App extends React.Component {
   state = {
@@ -32,15 +34,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-      <QueryInput
-      onPressSearch={this.onPressSearch}
-      />
-      <Button
-        onPress={ ()=> Linking.openURL("https://www.reddit.com/api/v1/authorize?client_id=HX3cUg6KrxLTRg&response_type=code&state=snip&redirect_uri=http://localhost:8888/App.js&duration=temporary&scope=identity+read")}
-        title="Learn More"
-        color="#841584"
-        accessibilityLabel="Learn more about this purple button"
-      />
+        <Feed/>
       </View>
     );
   }

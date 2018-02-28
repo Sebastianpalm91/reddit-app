@@ -30,7 +30,7 @@ export default class ApiContent extends React.Component{
   }
 
   fetchData = async () => {
-    const response = await fetch("http://api.giphy.com/v1/gifs/search?q=funny+dog&api_key=4GTOUVolpNMX9zDlgN2lRsz65ILvFmVL");
+    const response = await fetch("https://www.reddit.com/r/todayilearned/top.json?limit=10");
     const json = await response.json();
     this.setState({data: json.data});
   };
@@ -43,12 +43,7 @@ export default class ApiContent extends React.Component{
       ItemSeparatorComponent={() => <View style={{height: 0.5, backgroundColor: '#797979'}}/>}
       renderItem={({item}) =>
       <View style={styles.feedItem}>
-         <Image
-         style={{height: 100}}
-         source={{uri:`${item.images.original.url}`}}
-         onPress={ ()=> Linking.openURL(`${item.images.original.url}`)}
-
-         />
+       <Text>item.data.children.data.title</Text>
        <View style={styles.descContainer}>
          <Image source={{uri: 'https://randomuser.me/api/portraits/women/88.jpg' }} style={{height: 50, width: 50, borderRadius: 25}}/>
          <View style={styles.details}>
