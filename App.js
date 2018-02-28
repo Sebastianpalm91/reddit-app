@@ -36,7 +36,7 @@ export default class App extends React.Component {
       onPressSearch={this.onPressSearch}
       />
       <Button
-        onPress={ ()=> Linking.openURL("https://www.reddit.com/api/v1/authorize?client_id=HX3cUg6KrxLTRg&response_type=code&state=snip&redirect_uri=exp://192.168.1.189:19000/reddit-app&duration=temporary&scope=identity+read")}
+        onPress={ ()=> Linking.openURL("https://www.reddit.com/api/v1/authorize?client_id=HX3cUg6KrxLTRg&response_type=code&state=snip&redirect_uri=http://localhost:8888/App.js&duration=temporary&scope=identity+read")}
         title="Learn More"
         color="#841584"
         accessibilityLabel="Learn more about this purple button"
