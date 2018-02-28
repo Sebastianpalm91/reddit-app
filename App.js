@@ -25,7 +25,7 @@ export default class App extends React.Component {
     Loading.load(v => this.setState({loaded: true}));
   }
   onPressSearch = term => {
-
+    console.log(term);
   }
   render() {
     return (
@@ -33,6 +33,7 @@ export default class App extends React.Component {
       <QueryInput
       onPressSearch={this.onPressSearch}
       />
+      <Text>{QueryInput.setState}</Text>
       </View>
     );
   }
