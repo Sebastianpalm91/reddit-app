@@ -30,7 +30,7 @@ export default class ApiContent extends React.Component{
   }
 
   fetchData = async () => {
-    const response = await fetch("https://www.reddit.com/r/todayilearned/top.json?limit=10");
+    const response = await fetch("https://www.reddit.com/r/funny/.json?limit=1");
     const json = await response.json();
     this.setState({data: json.data});
   };
@@ -43,7 +43,13 @@ export default class ApiContent extends React.Component{
       ItemSeparatorComponent={() => <View style={{height: 0.5, backgroundColor: '#797979'}}/>}
       renderItem={({item}) =>
       <View style={styles.feedItem}>
-       <Text>item.data.children.data.title</Text>
+         <Image
+         style={{height: 100, width: 50}}
+         source={{uri:`${item.data.children.data.subreddit_id}`}}
+         onPress={ ()=> Linking.openURL(`${data.data.children.data.subreddit_id}`)}
+
+         />
+       <Text>{}</Text>
        <View style={styles.descContainer}>
          <Image source={{uri: 'https://randomuser.me/api/portraits/women/88.jpg' }} style={{height: 50, width: 50, borderRadius: 25}}/>
          <View style={styles.details}>
