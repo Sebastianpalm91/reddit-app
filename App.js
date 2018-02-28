@@ -6,6 +6,8 @@ import { AppRegistry,
   TouchableOpacity,
   TouchableHighlight,
   ActivityIndicator,
+  Button,
+  Linking,
 } from 'react-native';
 
 import ApiContent from './src/components/Api/ApiContent';
@@ -34,6 +36,12 @@ export default class App extends React.Component {
       onPressSearch={this.onPressSearch}
       />
       <Text>{QueryInput.setState}</Text>
+      <Button
+        onPress={ ()=> Linking.openURL("https://www.reddit.com/api/v1/authorize?client_id=HX3cUg6KrxLTRg&response_type=code&state=snip&redirect_uri=exp://192.168.1.189:19000/reddit-app&duration=temporary&scope=identity+read")}
+        title="Learn More"
+        color="#841584"
+        accessibilityLabel="Learn more about this purple button"
+      />
       </View>
     );
   }
