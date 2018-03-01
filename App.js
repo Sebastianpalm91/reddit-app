@@ -8,9 +8,7 @@ import { AppRegistry,
   ActivityIndicator,
   Button,
   Linking,
-  Dimensions
 } from 'react-native';
-import HTML from 'react-native-render-html';
 import ApiContent from './src/components/Api/ApiContent';
 import QueryInput from './src/components/Api/QueryInput';
 import Feed from './src/components/Feed/Feed';
