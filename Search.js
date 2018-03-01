@@ -22,12 +22,41 @@ import FirstScreen from './src/components/Screens/FirstScreen';
 import SecondScreen from './src/components/Screens/SecondScreen';
 // {this.state.loaded ?  <Feed/> : <Splash/>}
 
-const App = StackNavigator({
+const Navigate = StackNavigator({
   First: {
-    screen: Feed,
-  },
-  Login: {
     screen: Login,
   },
+  Second: {
+    screen: SecondScreen,
+  },
 });
-export default App;
+export default class App extends React.Component {
+  static navigationOptions = {
+    title: 'Welcome',
+  };
+  state = {
+    loaded: false
+  }
+  constructor(){
+    super()
+    Loading.load(v => this.setState({loaded: true}));
+  }
+  onPressSearch = term => {
+    console.log(term);
+  }
+  render() {
+    return (
+      <View style={styles.container}>
+        <Feed/>
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#EEEEEE',
+    justifyContent: 'center',
+  },
+});

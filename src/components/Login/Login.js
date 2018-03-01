@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Image, Text, KeyboardAvoidingView, } from 'react-native';
-import LoginForm from './LoginForm'
+import LoginForm from './LoginForm';
+import { StackNavigator } from 'react-navigation';
 
 export default class Login extends Component{
   render (){

@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Image, TouchableOpacity, Text,} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ApiContent from '../Api/ApiContent';
-
+import { StackNavigator } from 'react-navigation';
+import Login from '../Login/Login';
 
 export default class Feed extends Component{
   render (){
+    const {navigate} = this.props.navigation;
     return (
       <View style={styles.container}>
         <View style={styles.navBar}>
@@ -14,7 +16,7 @@ export default class Feed extends Component{
             <TouchableOpacity>
               <Icon style={styles.navItem} name="search" size={25}/>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigate('Login', {})}>
               <Icon style={styles.navItem} name="account-circle" size={25}/>
             </TouchableOpacity>
           </View>
@@ -51,7 +53,6 @@ export default class Feed extends Component{
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 25,
   },
   navBar: {
     height: 65,
