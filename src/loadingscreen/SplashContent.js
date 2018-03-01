@@ -1,16 +1,29 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image,} from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import SplashContent from './SplashContent';
-import Feed from '../components/Feed/Feed';
-
-
-export default class Splash extends Component {
-
+import Loading from './Loading';
+export default class SplashContent extends Component {
+  state = {
+    loaded: false
+  }
+  constructor(){
+    super()
+    Loading.load(v => this.setState({loaded: true}));
+  }
   render() {
     return (
       <View style={styles.wrapper}>
-        <SplashContent/>
+        <View style={styles.titleWrapper}>
+          <Image
+            style={styles.logo}
+            source={require('../Images/RedditLogo.png')}
+          />
+          <Text style={styles.title}>Reddit App!</Text>
+        </View>
+
+        <View>
+          <Text style={styles.subtitle}>Awesome app</Text>
+        </View>
       </View>
     );
   }
